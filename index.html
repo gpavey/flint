@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.css" rel='stylesheet'/>
+  <link href='style.css' rel='stylesheet' />
+
+</head>
+<body>
+  <script type='text/x-handlebars' data-template-name='application'>
+    <div class='navbar navbar-default'>
+      <div class='container'>
+        {{#link-to 'index' class='navbar-brand'}}<img src='images/logo.png' alt='logo' height='34' width='224' />{{/link-to}}
+        <ul class='nav navbar-nav navbar-right'>
+          {{#link-to 'index' tagName='li'}}Home{{/link-to}}
+          {{#link-to 'about' tagName='li'}}About{{/link-to}}
+        </ul>
+      </div>
+    </div>
+    <div class='container'>
+      {{outlet}}
+    </div>
+    <footer class='container'>
+      <hr />
+      <p class='pull-left'>&copy; 2013 The Flint &amp; Flame</p>
+      <p class='pull-right'>{{#link-to 'credits'}}Credits{{/link-to}}</p>
+    </footer>
+  </script>
+  <script type='text/x-handlebars' data-template-name='index'>
+    <h1>Welcome to The Flint &amp; Flame!</h1>
+    <p>There are {{productsCount}} products</p>
+    <img {{bind-attr src='logo'}} alt='logo'/>
+    <p>Rendered on {{time}}</p>
+  </script>
+  <script type='text/x-handlebars' data-template-name='about'>
+    <h1>About The Fire Sprites</h1>
+    <p>{{contactName}}</p>
+    <img {{bind-attr src='avatar'}} alt='Avatar' />
+    <p>{{open}}</p>
+  </script>
+  <script type='text/x-handlebars' data-template-name='credits'>
+    <h1>Thanks for the Help!</h1>
+    <p>This site would not be possible without the hardworking Ember Core Team!</p>
+  </script>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="http://builds.emberjs.com/tags/v1.11.3/ember.min.js"></script>
+  <script src="http://builds.emberjs.com/tags/v1.11.3/ember-template-compiler.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ember-data.js/1.0.0-beta.16.1/ember-data.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src='app.js'></script>
+</body>
+</html>
